@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Package') {
             steps {
-                copyArtifacts filter: 'librustic_ffi_client.so', projectName: '/rustic/daemon/master', target: 'lib'
+                copyArtifacts filter: '**/*.so', projectName: '/rustic/daemon/master', target: 'lib'
                 sh 'npm pack'
             }
             post {
